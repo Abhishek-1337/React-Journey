@@ -1,31 +1,27 @@
-.container{
-    padding:1rem;
-    max-width: 40rem;
-    width: 90%;
+.input {
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 90%;
+  max-width: 40rem;
 }
 
-.container form{
-    width:100%;
-    height:100%;
+.input label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
-.container form input{
-    display:block;
-    width:100%;
-    margin-bottom:0.7rem;
-    padding:0.25rem;
-    border: 1px solid #ccc;
-
+.input input {
+  font: inherit;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 0.15rem;
+  margin-bottom: 0.5rem;
 }
 
-.container label{
-    font-weight: bold;
+.input input:focus {
+  outline: none;
+  border-color: #4f005f;
 }
-
-.container input:focus{
-    outline:none;
-    border-color: #4f005f;
-}
-
-
 
