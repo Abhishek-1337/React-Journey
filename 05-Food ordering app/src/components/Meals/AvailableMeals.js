@@ -1,6 +1,7 @@
 import MealItem from './MealsItem/MealItem';
 import classes from './AvailableMeals.module.css';
 import Card from '../UI/Card';
+import { useEffect } from 'react/cjs/react.production.min';
 
 const DUMMY_MEALS = [
     {
@@ -30,6 +31,24 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableMeals = props => {
+
+    useEffect(()=>{
+      async function fetchMeals(){
+        try{
+          const response = await fetch('https://react-meals-2ea12-default-rtdb.firebaseio.com/meals.json');
+          if (!response.ok) {
+            throw new Error('Something went wrong!');
+          }
+          const data = await response.json();
+          console.log(data);
+        }
+        catch(error){
+          console.log('hello'+error);
+        }
+      }
+      fetchMeals();
+    },[]);
+
     const meals = DUMMY_MEALS.map((meal)=>
     <MealItem
     id={meal.id} 
